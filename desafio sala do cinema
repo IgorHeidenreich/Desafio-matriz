@@ -1,1 +1,59 @@
+package primeiro;
+import java.util.Scanner;
+import java.util.Random;
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		Random aleatorio = new Random();
+		int linhas = 0;
+		int colunas = 0;
+		
+		int amigos = 0;
+		int contador = 0;
+		int posições = 0;
+		
+	
+		System.out.println("digite o numero de linhas da sala");
+		linhas = scanner.nextInt();
+		System.out.println("digite o numero de colunas");
+		colunas = scanner.nextInt();
+		System.out.println("digite quantas pessoas seu grupo possui");
+		amigos = scanner.nextInt();
+		int[][] sala = new int [linhas][colunas];
+		for ( int l = 0 ; l< linhas; l++){
+			for (int c = 0; c < colunas; c++){
+				sala[l][c] = aleatorio.nextInt(2);
+			}
+				} 
+		
+		for ( int l = 0; l < linhas; l++) {
+            for ( int c = 0; c < colunas; c++) {
+                System.out.print(sala[l][c] + " ");
+            }
+            System.out.println();
+        }
+			for ( int l = 0; l < linhas; l++) {
+	            for ( int c = 0; c < colunas; c++) {
+	            	
+	            if ( sala[l][c] == 0) {
+	            		contador++;}
+	            
+	            		 if (sala[l][c] == 1){
+	            				contador = 0;
+	            		 }
+	            			if (contador >= amigos) {
+	            			posições++;
+	            		
+	            			}
+	             
+	       }contador = 0;
+	            		
+	     
+	     } System.out.println("Seu grupo pode se sentar em: " + posições + " posições");
+			scanner.close();
+		
+		}	 
+	}
 
